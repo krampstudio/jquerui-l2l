@@ -1,0 +1,28 @@
+{
+    "name" : "jqueryui-l2l",
+    "description"   : "A JQuery UI List to List widget",
+    "version"       : "0.1.0",
+    "homepage"      : "https://github.com/krampstudio/jqueryui-l2l",
+    "author": {
+        "name"  : "Bertrand Chevrier",
+        "email" : "chevrier.bertrand@gmail.com",
+        "url"   : "https://github.com/krampstudio"
+    },
+    "licenses": [{
+        "type": "GPL",
+        "url" : "http://www.gnu.org/licenses/gpl-3.0.txt"
+      }
+    ],
+    "repository": {
+        "type" : "git",
+        "url"  : "git://github.com/krampstudio/jqueryui-l2l"
+    },
+    "devDependencies": {
+        "grunt" 				: "0.4.x",
+		"grunt-jsdoc"		 	: "latest",
+		"grunt-contrib-qunit" 	: "latest",
+	   	"grunt-contrib-jshint" 	: "latest",
+		"grunt-contrib-uglify"	: "latest",
+		"grunt-contrib-concat" 	: "latest"
+    }	
+}
