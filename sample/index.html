@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../lib/jquery.ui/dist/jquery-ui.min.css" />
+        <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="../lib/jquery.ui/dist/jquery-ui.min.js"></script>
+        
+        <script type="text/javascript" src="../src/l2l.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#l2l').l2l({
+                    create: function(){
+                        console.log("created")
+                    }
+                });
+                $('a').button();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="l2l">
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+            <ul>
+                <li>item 4</li>
+                <li>item 5</li>
+                <li>item 6</li>
+            </ul>
+        </div>
+    </body>
+</html>
