@@ -13,14 +13,14 @@
 .l2l-list li{
     padding:4px 6px;
     margin: 2px;
+    cursor: pointer;
 }
 .l2l-list li .ui-icon{
     float: left;
-    cursor: pointer;
     top:-2px;
 }
-.l2l ul > .ui-state-highlight{
-  min-height:20px;
+.l2l ul li{
+  min-height:18px;
 }
 
 .l2l-ctrl li {
