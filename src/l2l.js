@@ -6,36 +6,52 @@
             icons : {
                 l2r : "ui-icon-triangle-1-e",
                 r2l : "ui-icon-triangle-1-w",
-                rm : "ui-icon-trash"
-            }
+                rm : "ui-icon-trash",
+                grip : "ui-icon-grip-dotted-vertical"
+            },
+            width: 'auto',
+            height: 'auto'
         },
         
         _create: function() {
             //this.options;
-            var lists = this.element.children("ul");
-            if(lists.length != 2){
-                $.error("The l2l element must contains 2 lists as direct child");
-                return false;
+            
+            if(!this.element.hasClass('l2l')){
+            
+                var lists = this.element.children("ul");
+                if(lists.length != 2){
+                    $.error("The l2l element must contains 2 lists as direct child");
+                    return false;
+                }
+                var llist = $(lists.get(0));
+                var rlist = $(lists.get(1));
+                
+                this.element.addClass('l2l');
+                lists
+                    .addClass('l2l-list ui-widget-content ui-corner-all')
+                    .sortable({
+                        placeholder: 'ui-state-highlight',
+                        opacity: 0.7
+                    });
+                lists
+                    .find('li')
+                    .addClass('ui-state-default ui-corner-all')
+                    .prepend(this._iconHtml('grip'));
+                
+                llist.after(this._controlsHtml());
             }
-            var llist = lists.get(0);
-            var rlist = lists.get(1);
-            
-            this.element.append(this._controlsHtml());
-            
-            console.log(llist)
-            console.log(rlist)
         },
         
         _controlsHtml : function(){
-            return  "<a class='ui-corner'>" +
-                        "<span class='ui-icon " + this.options.icons.l2r + "'>&#9650;</span>" +
-                    "</a>" + 
-                    "<a class='ui-corner'>" +
-                        "<span class='ui-icon " + this.options.icons.r2l + "'>&#9650;</span>" +
-                    "</a>" + 
-                    "<a class='ui-corner'>" +
-                        "<span class='ui-icon " + this.options.icons.trash + "'>&#9650;</span>" +
-                    "</a>";
+            return  "<ul class='l2l-ctrl'>" +
+                        "<li class='ui-state-default ui-corner-all'>" +  this._iconHtml('l2r') + "</li>" +
+                        "<li class='ui-state-default ui-corner-all'>" +  this._iconHtml('r2l') + "</li>" +
+                        "<li class='ui-state-default ui-corner-all'>" +  this._iconHtml('rm') + "</li>" +
+                    "</ul>";
+        },
+        
+        _iconHtml : function(name){
+            return "<span class='ui-icon " + this.options.icons[name] + "'></span>"
         }
     });
 }(jQuery));

@@ -1,0 +1,30 @@
+.l2l ul {
+    list-style-type: none;
+    display:inline-block;
+    padding:2px;
+    margin: 2px;
+}
+
+.l2l-list {
+    min-width:100px;
+    overflow-y: auto;
+}
+
+.l2l-list li{
+    padding:4px 6px;
+    margin: 2px;
+}
+.l2l-list li .ui-icon{
+    float: left;
+    cursor: pointer;
+    top:-2px;
+}
+.l2l ul > .ui-state-highlight{
+  min-height:20px;
+}
+
+.l2l-ctrl li {
+   width: 16px;
+   margin: 2px 0;
+   padding: 4px;
+}
