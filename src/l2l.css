@@ -1,8 +1,9 @@
 .l2l ul {
     list-style-type: none;
     display:inline-block;
+    vertical-align:top;
     padding:2px;
-    margin: 2px;
+    margin: 4px;
 }
 
 .l2l-list {
@@ -18,6 +19,7 @@
 .l2l-list li .ui-icon{
     float: left;
     top:-2px;
+    cursor:move;
 }
 .l2l ul li{
   min-height:18px;
