@@ -13,8 +13,13 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $('#l2l').l2l({
+                    sortable: true,
                     create: function(){
                         console.log("created")
+                    },
+                    change: function(event, ui){
+                        console.log("changed")
+                        console.log(ui)
                     }
                 });
                 $('a').button();
@@ -22,14 +27,13 @@
         </script>
     </head>
     <body>
-        <div id="l2l">
+        <div id="l2l" style="border:solid 1px red;">
             <ul>
                 <li>item 1</li>
                 <li>item 2</li>
                 <li>item 3</li>
             </ul>
             <ul>
-                <li>item 4</li>
                 <li>item 5</li>
                 <li>item 6</li>
             </ul>
