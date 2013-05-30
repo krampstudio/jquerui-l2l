@@ -12,14 +12,22 @@
         <script type="text/javascript" src="../src/l2l.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-                $('#l2l').l2l({
-                    sortable: true,
+                $('#l2l_1').l2l({
                     create: function(){
-                        console.log("created")
+                        console.log("l2l_1created");
                     },
                     change: function(event, ui){
-                        console.log("changed")
-                        console.log(ui)
+                        console.log(" l2l_1 changed");
+                        console.log(ui);
+                    }
+                });
+                 $('#l2l_2').l2l({
+                    create: function(){
+                        console.log("l2l_2 created");
+                    },
+                    change: function(event, ui){
+                        console.log("l2l_2 changed");
+                        console.log(ui);
                     }
                 });
                 $('a').button();
@@ -27,7 +35,7 @@
         </script>
     </head>
     <body>
-        <div id="l2l" style="border:solid 1px red;">
+        <div id="l2l_1" style="border:solid 1px red;">
             <ul>
                 <li>item 1</li>
                 <li>item 2</li>
@@ -36,6 +44,19 @@
             <ul>
                 <li>item 5</li>
                 <li>item 6</li>
+            </ul>
+        </div>
+        
+        <div id="l2l_2" style="border:solid 1px green;">
+            <ul>
+                <li>item 10</li>
+                <li>item 11</li>
+                <li>item 12</li>
+                <li>item 13</li>
+                <li>item 14</li>
+            </ul>
+            <ul>
+                
             </ul>
         </div>
     </body>

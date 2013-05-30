@@ -1,16 +1,24 @@
 (function($, undefined){
     'use strict';
-
-/** @namespace ks */
-/** @namespace ks.l2l */
+    
+    /** @namespace ks */
+    /** @namespace ks.l2l */
     
     /**
      * jQuery UI widget ks.l2l
+     * 
      */
     $.widget( "ks.l2l", /** @lends ks.l2l */ {
         
         /**
+         * Widget options, with default values
          * @type {Object}
+         * @property {Object} icons - the list of icons used (refers to jquery-ui icon classes)
+         * @property {String|Number} [width='auto'] - the lists width as auto, a css string or in pixel
+         * @property {String|Number} [height='auto'] - the lists height as auto, a css string or in pixel
+         * @property {String|Boolean} [clear='right'] - the clear/trash button strategy in 'right', 'left', 'all' or false 
+         *                                              by example, left removes selected items from the left list, etc.
+         * @property {Boolean} [interconnect=false] - in case of multiple l2l widgets, if we can drag elements into another widget
          */
         options: {
             icons : {
@@ -21,7 +29,8 @@
             },
             width: 'auto',
             height: 'auto',
-            clear : 'right' //right, left, all or false
+            clear : 'right',
+            interconnect : false
         },
         
         /**
@@ -29,9 +38,11 @@
          * @private
          */
         _create: function() {
+            
             //check if the element is aleady created            
-            if(!this.element.hasClass('l2l')){
+            if(!this.element.data('ks-l2l')){
                 
+                //set up elements
                 this.lists = this.element.children("ul");
                 if(this.lists.length != 2){
                     $.error("The l2l element must contains 2 lists as direct child");
@@ -47,7 +58,9 @@
                     .find('li')
                     .addClass('l2l-list-item ui-state-default ui-corner-all')
                     .prepend(this._iconHtml('grip'));
+                    
                 this.llist.after(this._controlsHtml());
+                
                 this._updateSize();
                 
                 //make the lists elements selectable, sortable and draggable
@@ -69,10 +82,10 @@
                         handle : '.ui-icon',
                         placeholder: 'ui-state-highlight',
                         opacity: 0.7,
-                        connectWith : '.l2l-list'
+                        connectWith : (this.options.interconnect === true) ? '.l2l-list' : this.lists, 
                     })
                     .draggable({
-                        connectToSortable : '.l2l-list',
+                        connectToSortable : (this.options.interconnect === true) ? '.l2l-list' : this.lists, 
                         helper : 'clone',
                         scroll: false,
                         handle : '.ui-icon',
@@ -81,14 +94,15 @@
                         opacity: 0.7
                     });
                 
+                //attach the events handlers
                 this._on(this._events);
             }
         },
         
         /**
-         * the lists of events bound into the widget
-         * @type {Object.<string,function>} 
+         * Events bounds into the widget
          * @private
+         * @type {Object.<string,function>} 
          */
         _events: {
             "click .l2l-ctrl > li": function( event ) {
@@ -120,6 +134,11 @@
              this._change(event);
         },
         
+        /**
+         * Action to move items from right to left
+         * @private
+         * @param {Object} event - the source event
+         */
         _clear : function(event){
             if(this.options.clear !== false){
                 var ctx = (this.options.clear === 'all') ? this.lists : (this.options.clear === 'left') ? this.llist : this.rlist;
@@ -139,17 +158,33 @@
             /**
              * ks.l2l.change event
              * @event ks.l2l#change
-             * @type {Object}
-             * @property {Array} elements - contains the elements for each list (left at index 0 and right at index 1)
+             * @type {Items}
              */
-            this._trigger("change", event, {
-                elements : [
-                    this.llist.find('li'),
-                    this.rlist.find('li')
-                ]
-            });
+            this._trigger("change", event, this._getItems());
         },
         
+        /**
+         * Get the items on the lists
+         * @private
+         * @returns {Items}
+         */
+        _getItems : function(){
+            
+            /**
+             * The lists items
+             * @typedef {Object} Items
+             * @property {Array} left - the left's list items from
+             * @property {Array} right - the right's list items from
+             */
+            return {
+              'left' : this.llist.find('li'), 
+              'right' : this.rlist.find('li')
+            };
+        },
+        
+        /**
+         * Update the lists size according to the options
+         */
         _updateSize : function(){
             if(this.options.width && this.options.width !== 'auto'){
                 var width = this.options.width;
@@ -173,6 +208,10 @@
             }
         },
         
+        /**
+         * Build the HTML elements used for the controls
+         * @return {String} the html string
+         */
         _controlsHtml : function(){
             var controls =  "<ul class='l2l-ctrl'>" +
                         "<li id='l2r' class='ui-state-default ui-corner-all'>" +  this._iconHtml('l2r') + "</li>" +
@@ -185,8 +224,12 @@
             return controls;
         },
         
+        /**
+         * Build the HTML element for an icon regarding the options
+         * @return {String} the html string
+         */
         _iconHtml : function(name){
-            return "<span class='ui-icon " + this.options.icons[name] + "'></span>"
+            return "<span class='ui-icon " + this.options.icons[name] + "'></span>";
         }
     });
 }(jQuery));
