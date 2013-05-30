@@ -38,9 +38,8 @@
          * @private
          */
         _create: function() {
-            
             //check if the element is aleady created            
-            if(!this.element.data('ks-l2l')){
+            if(!this.element.hasClass('l2l')){
                 
                 //set up elements
                 this.lists = this.element.children("ul");
@@ -186,6 +185,8 @@
          * Update the lists size according to the options
          */
         _updateSize : function(){
+            
+            //update width if set in options
             if(this.options.width && this.options.width !== 'auto'){
                 var width = this.options.width;
                 if($.isNumeric(this.options.width)){
@@ -193,7 +194,9 @@
                 }
                 this.lists.width(width);
             } 
+            
             if(this.options.height){
+                //if auto height, set a min-height for the lists to be consistents
                 if(this.options.height === 'auto'){
                     var lHeight = parseInt(this.llist.height(), 10);
                     var rHeight = parseInt(this.rlist.height(), 10);

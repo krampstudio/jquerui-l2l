@@ -11,6 +11,10 @@ module.exports = function(grunt){
             css : 'src/*.css' 
         },
         
+        banner :    '/* <%= pkg.name %> \n' + 
+                    ' <%= pkg.author.name %> <%= pkg.author.email %> copyright <%= grunt.template.today("yyyy") %> \n' + 
+                    ' @license <%= pkg.licenses[0].type %> <%= pkg.licenses[0].url %> \n*/\n',
+        
         clean : ['<%=path.build%>'],
         
         jsdoc : {
@@ -24,13 +28,22 @@ module.exports = function(grunt){
         
         uglify : {
             options : {
-                banner : '/* <%= pkg.name %> \n'
-                        + ' <%= pkg.author.name %> <%= pkg.author.email %> copyright <%= grunt.template.today("yyyy") %> \n'
-                        + ' @license <%= pkg.licenses[0].type %> <%= pkg.licenses[0].url %> \n*/\n'
+                banner : '<%=banner%>'
             },
             build : {
                 src : '<%=path.src%>',
-                dest : 'src/js/l2l.min.js'
+                dest : 'l2l.min.js'
+            }
+        },
+        
+        cssmin: {
+            dist: {
+                src : '<%=path.css%>',
+                dest : 'l2l.min.css',
+                options : {
+                    banner : '<%=banner%>',
+                    report : 'gzip'
+                } 
             }
         },
         
@@ -48,8 +61,10 @@ module.exports = function(grunt){
         }
 	});
     grunt.loadNpmTasks('grunt-jsdoc');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     
-    grunt.registerTask('default', ['clean', 'jshint', 'jsdoc', 'uglify'])
+    grunt.registerTask('default', ['clean', 'jshint', 'jsdoc', 'uglify', 'cssmin'])
 };
