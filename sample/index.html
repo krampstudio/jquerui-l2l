@@ -2,9 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../lib/jquery.ui/dist/jquery-ui.min.css" />
-        
+
+        <link rel="stylesheet" type="text/css" href="../lib/jquery.ui/dist/jquery-ui.min.css" />        
         <link rel="stylesheet" type="text/css" href="../l2l.min.css" />
+        <link rel="stylesheet" type="text/css" href="./sample.css" />
         
         <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="../lib/jquery.ui/dist/jquery-ui.min.js"></script>
@@ -32,71 +33,32 @@
                     },
                     width:200
                 });
-                $('a').button();
             });
         </script>
-        <style>
-            html, body{
-                height:100%;
-                margin:0;
-                padding:0;
-                font-size:14px;
-            }
-            header{
-                display:block;
-                height:10%;
-                margin:0;
-                padding:0;
-                background-color:#333;
-                color:#FEFEFE;
-            }
-            header h1{
-                position:absolute;
-                top:.5em;
-                left:1em;
-            }
-            aside {
-                position:relative;
-                display: inline-block; 
-                vertical-align:top;
-                width: 15%;
-                height:90%;
-                background-color:#e0e0e0;
-                background: -webkit-gradient(linear, left top, right top, from(#BBBBBB), to(#E0E0E0)); 
-                background: -webkit-linear-gradient(left, #BBBBBB, #E0E0E0);
-                background: -moz-linear-gradient(left, #BBBBBB, #E0E0E0); 
-                background: -ms-linear-gradient(left, #BBBBBB, #E0E0E0);
-                margin:0;
-                padding:0 .5em;
-                border-bottom-right-radius:9px;
-            }
-            aside .ui-icon{
-                display: inline-block;
-            }
-            section{
-                vertical-align:top;
-                display: inline-block;
-                width: 80%;
-                padding:0 1em;
-            }
-            #l2l_1, #l2l_2 {
-                border:solid 1px #333;
-                width:auto;
-            }
-        </style>
+
     </head>
     <body>
         <header>
             <h1>jQuery UI List 2 List plugin</h1>
         </header>
         <aside>
-            <h1>Legend</h1>
-            <ol>
-                <li>Drag list items by a keeping the mouse click down to the <span class="ui-icon ui-icon-grip-dotted-vertical"></span>grid</li>
-            </ol>
+            <h1>Features</h1>
+            <ul>
+                <li>Moves list items from left to right, right to left, into the list (the change items order) </li>
+                <li>Moving can be done using the controls (<span class="ui-icon ui-icon-triangle-1-e"></span>, <span class="ui-icon ui-icon-triangle-1-w"></span> and <span class="ui-icon ui-icon-trash"></span>) or by drag and drop (using the drag zone on <span class="ui-icon ui-icon-grip-dotted-vertical"></span>)</li>
+                <li>Multiple selecion, by holding <em>Ctrl</em> or by using the lasso (inside the containing list)</li>
+                <li>L2L interconnect : drop an item to another list</li>
+                <li>Theme fully integrated to jQuery UI</li>
+                <li>Customizable</li>
+            </ul>
+            <p>More to come</p>
+            <ul>
+                <li>Items (re-)sorting on change</li>
+                <li>Hard reset</li>
+            </ul>
         </aside>
         <section>
-            <h1>List 1 : #l2l_1</h1>
+            <h1>List 1 - <a href="#">show sources</a></h1>
             <div id="l2l_1">
                 <ul>
                     <li>item 1</li>
@@ -109,7 +71,7 @@
                     <li>item 6</li>
                 </ul>
             </div>
-            <h1>List 1 : #l2l_2</h1>
+            <h1>List 2 - <a href="#">show sources</a></h1>
             <div id="l2l_2">
                 <ul>
                     <li>item 10</li>
