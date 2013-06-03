@@ -1,7 +1,7 @@
 #project
 build
 node_modules
-lib
+/lib
 
 #ide
 .c9revisions

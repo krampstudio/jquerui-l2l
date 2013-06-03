@@ -6,13 +6,25 @@
         <link rel="stylesheet" type="text/css" href="../lib/jquery.ui/dist/jquery-ui.min.css" />        
         <link rel="stylesheet" type="text/css" href="../l2l.min.css" />
         <link rel="stylesheet" type="text/css" href="./sample.css" />
+        <link rel="stylesheet" type="text/css" href="lib/shjs/sh_style.css">
         
         <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="../lib/jquery.ui/dist/jquery-ui.min.js"></script>
         
+        <script type="text/javascript" src="lib/shjs/sh_main.min.js"></script>
+        <script type="text/javascript" src="lib/shjs/lang/sh_javascript.min.js"></script>
+        
         <script type="text/javascript" src="../l2l.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
+                
+                sh_highlightDocument();
+                
+                $('section > article > h1 > a').click(function(event){
+                    event.preventDefault();
+                    $(this).parents('article').find('pre').toggle();
+                })
+                
                 $('#l2l_1').l2l({
                     create: function(){
                         console.log("l2l_1created");
@@ -39,7 +51,7 @@
     </head>
     <body>
         <header>
-            <h1>jQuery UI List 2 List plugin</h1>
+            <h1>List 2 List plugin <small>for jQuery UI</small></h1>
         </header>
         <aside>
             <h1>Features</h1>
@@ -51,37 +63,50 @@
                 <li>Theme fully integrated to jQuery UI</li>
                 <li>Customizable</li>
             </ul>
-            <p>More to come</p>
+            <p>More to come soon : </p>
             <ul>
                 <li>Items (re-)sorting on change</li>
                 <li>Hard reset</li>
             </ul>
         </aside>
         <section>
-            <h1>List 1 - <a href="#">show sources</a></h1>
-            <div id="l2l_1">
-                <ul>
-                    <li>item 1</li>
-                    <li>item 2</li>
-                    <li>item 3</li>
-                    <li>item 4</li>
-                </ul>
-                <ul>
-                    <li>item 5</li>
-                    <li>item 6</li>
-                </ul>
-            </div>
-            <h1>List 2 - <a href="#">show sources</a></h1>
-            <div id="l2l_2">
-                <ul>
-                    <li>item 10</li>
-                    <li>item 11</li>
-                    <li>item 12</li>
-                    <li>item 13</li>
-                    <li>item 14</li>
-                </ul>
-                <ul></ul>
-            </div>
+            <article>
+                <h1>List 1 - <a href="#">show sources</a></h1>
+                <pre class="sh_javascript" contenteditable="true">
+    $('#l2l_1').l2l({
+        interconnect : true
+    });</pre>
+    
+                <div id="l2l_1">
+                    <ul>
+                        <li>item 1</li>
+                        <li>item 2</li>
+                        <li>item 3</li>
+                        <li>item 4</li>
+                    </ul>
+                    <ul>
+                        <li>item 5</li>
+                        <li>item 6</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h1>List 2 - <a href="#">show sources</a></h1>
+                <pre class="sh_javascript" contenteditable="true">
+    $('#l2l_1').l2l({
+         width : 200
+    });</pre>
+                <div id="l2l_2">
+                    <ul>
+                        <li>item 10</li>
+                        <li>item 11</li>
+                        <li>item 12</li>
+                        <li>item 13</li>
+                        <li>item 14</li>
+                    </ul>
+                    <ul></ul>
+                </div>
+            </article>
         </section>
     </body>
 </html>

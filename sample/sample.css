@@ -47,6 +47,17 @@ aside .ui-icon {
     vertical-align:bottom;
 }
 
+aside ul {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+aside ul li {
+    padding:.2em;
+    margin:.3em 0;
+    border-left:solid 2px #FAA523;
+}
+
 section {
     vertical-align: top;
     display: inline-block;
@@ -64,4 +75,8 @@ section h1 a{
 #l2l_1, #l2l_2 {
     border: solid 1px #333;
     width:auto;
+}
+
+article pre{
+    display:none;
 }
