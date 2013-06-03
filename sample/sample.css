@@ -45,6 +45,7 @@ aside .ui-icon {
     border: solid 1px #999;
     border-radius:3px;
     vertical-align:bottom;
+    margin:1px;
 }
 
 aside ul {
@@ -53,9 +54,9 @@ aside ul {
     margin:0;
 }
 aside ul li {
-    padding:.2em;
-    margin:.3em 0;
-    border-left:solid 2px #FAA523;
+    padding:.1em .1em .5em .5em;
+    margin:.5em;
+    border-bottom:solid 1px #999;
 }
 
 section {

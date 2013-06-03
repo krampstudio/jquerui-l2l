@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <link rel="stylesheet" type="text/css" href="../lib/jquery.ui/dist/jquery-ui.min.css" />        
+        <link id="jq-theme" rel="stylesheet" type="text/css" href="../lib/jquery.ui/dist/jquery-ui.min.css" />        
         <link rel="stylesheet" type="text/css" href="../l2l.min.css" />
         <link rel="stylesheet" type="text/css" href="./sample.css" />
         <link rel="stylesheet" type="text/css" href="lib/shjs/sh_style.css">
@@ -17,7 +17,8 @@
         <script type="text/javascript" src="../l2l.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-                
+               
+                //set up code highlight 
                 sh_highlightDocument();
                 
                 $('section > article > h1 > a').click(function(event){
@@ -25,6 +26,12 @@
                     $(this).parents('article').find('pre').toggle();
                 })
                 
+                //theme update
+                $('#theme').change(function(){
+                    $('#jq-theme').attr('href', 'http://code.jquery.com/ui/1.9.2/themes/' +  $(this).val() + '/jquery-ui.css');
+                });
+
+                //set up sample lists
                 $('#l2l_1').l2l({
                     create: function(){
                         console.log("l2l_1created");
@@ -50,6 +57,7 @@
 
     </head>
     <body>
+        <a href="https://github.com/jquery/jquery-ui"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
         <header>
             <h1>List 2 List plugin <small>for jQuery UI</small></h1>
         </header>
@@ -70,6 +78,34 @@
             </ul>
         </aside>
         <section>
+            Change theme: 
+            <select id="theme">
+                <option value="base">Base</option>
+                <option value="black-tie">Black Tie</option>
+                <option value="blitzer">Blitzer</option>
+                <option value="cupertino">Cupertino</option>
+                <option value="dark-hive">Dark Hive</option>
+                <option value="dot-luv">Dot Luv</option>
+                <option value="eggplant">Eggplant</option>
+                <option value="excite-bike">Excite Bike</option>
+                <option value="flick">Flick</option>
+                <option value="hot-sneaks">Hot Sneaks</option>
+                <option value="humanity">Humanity</option>
+                <option value="le-frog">Le Frog</option>
+                <option value="mint-choc">Mint Choc</option>
+                <option value="overcast">Overcast</option>
+                <option value="pepper-grinder">Pepper Grinder</option>
+                <option value="redmond">Redmond</option>
+                <option value="smoothness">Smoothness</option>
+                <option value="south-street">South Street</option>
+                <option value="start">Start</option>
+                <option value="sunny">Sunny</option>
+                <option value="swanky-purse">Swanky Purse</option>
+                <option value="trontastic">Tronstatic</option>
+                <option value="ui-darkness">UI Darkness</option>
+                <option value="ui-lightness">UI Lightness</option>
+                <option value="vader">Vader</option>
+            </select>
             <article>
                 <h1>List 1 - <a href="#">show sources</a></h1>
                 <pre class="sh_javascript" contenteditable="true">
