@@ -2,7 +2,7 @@
   "name": "jqueryui-l2l",
   "description": "A JQuery UI List to List widget",
   "version": "0.1.0",
-  "homepage": "https://github.com/krampstudio/jqueryui-l2l",
+  "homepage": "http://krampstudio.com/jquerui-l2l/",
   "author": {
     "name": "Bertrand Chevrier",
     "email": "chevrier.bertrand@gmail.com",
@@ -25,9 +25,9 @@
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-concat": "latest",
-    "grunt-contrib-clean": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.6.1",
-    "grunt-jquerymanifest": "git+https://github.com/krampstudio/grunt-jquerymanifest.git",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-jquerymanifest": "latest",
+    "grunt-contrib-copy": "latest"
   }
 }
