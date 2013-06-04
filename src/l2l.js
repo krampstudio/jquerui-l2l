@@ -30,7 +30,8 @@
             width: 'auto',
             height: 'auto',
             clear : 'right',
-            interconnect : false
+            interconnect : false,
+            autosort : false
         },
         
         /**
@@ -92,6 +93,11 @@
                         zIndex: 1000,
                         opacity: 0.7
                     });
+
+                if(this.options.autosort === true){
+                    this._sort(this.llist);
+                    this._sort(this.rlist);
+                }
                 
                 //attach the events handlers
                 this._on(this._events);
@@ -154,6 +160,11 @@
          */
         _change: function(event){
             
+            if(this.options.autosort === true){
+                this._sort(this.llist);
+                this._sort(this.rlist);
+            }
+            
             /**
              * ks.l2l.change event
              * @event ks.l2l#change
@@ -179,6 +190,16 @@
               'left' : this.llist.find('li'), 
               'right' : this.rlist.find('li')
             };
+        },
+
+        sort: function(current, next){
+            var currentVal = $(current).text().toUpperCase();
+            var nextVal = $(next).text().toUpperCase();
+            return (currentVal < nextVal) ? -1 : (currentVal > nextVal) ? 1 : 0;
+        },
+
+        _sort : function(list){
+            list.children('li').sort(this.sort).appendTo(list);
         },
         
         /**
