@@ -1,0 +1,6 @@
+/* jqueryui-l2l 
+ Bertrand Chevrier chevrier.bertrand@gmail.com copyright 2013 
+ @license GPL http://www.gnu.org/licenses/gpl-3.0.txt 
+*/
+
+.l2l ul{list-style-type:none;display:inline-block;vertical-align:top;padding:2px;margin:5px}.l2l-list{min-width:100px;overflow-y:auto}.l2l-list li{padding:4px 6px;margin:2px;cursor:pointer}.l2l-list li .ui-icon{float:left;top:-2px;cursor:move}.l2l ul li{min-height:18px}.l2l-ctrl li{width:16px;margin:2px 0;padding:4px}

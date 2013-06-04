@@ -1,0 +1,83 @@
+
+@import url(http://fonts.googleapis.com/css?family=Dosis:600);
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+header {
+    display: block;
+    min-height:40px;
+    height: 10%;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color:#FEFEFE;
+}
+header h1 {
+    position: absolute;
+    top: .2em;
+    left: 1em;
+    margin:0;
+    padding:0;
+    font-family: 'Dosis', sans-serif;
+}
+aside {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 20% ;
+    height: 90% ;
+    background-color: #e0e0e0;
+    background: -webkit-gradient(linear, left top, right top, from(#BBBBBB), to(#E0E0E0));
+    background: -webkit-linear-gradient(left, #BBBBBB, #E0E0E0);
+    background: -moz-linear-gradient(left, #BBBBBB, #E0E0E0);
+    background: -ms-linear-gradient(left, #BBBBBB, #E0E0E0);
+    margin: 0;
+    padding: 0 .5em;
+    border-bottom-right-radius: 9px;
+}
+
+aside .ui-icon {
+    display: inline-block;
+    border: solid 1px #999;
+    border-radius:3px;
+    vertical-align:bottom;
+    margin:1px;
+}
+
+aside ul {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+aside ul li {
+    padding:.1em .1em .5em .5em;
+    margin:.5em;
+    border-bottom:solid 1px #999;
+}
+
+section {
+    vertical-align: top;
+    display: inline-block;
+    width: 70% ;
+    padding: 0 1em;
+}
+
+section h1 {
+    font-size:1.2em;
+}
+section h1 a{
+    font-weight: normal;
+}
+
+#l2l_1, #l2l_2 {
+    border: solid 1px #333;
+    width:auto;
+}
+
+article pre{
+    display:none;
+}

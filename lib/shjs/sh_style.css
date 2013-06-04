@@ -1,0 +1,24 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+pre.sh_sourceCode{background-color:#2A2A2A;color:#f0f0f0;font-weight:normal;font-style:normal;font-family: 'Inconsolata', sans-serif;padding:.3em;border-radius:3px;}
+pre.sh_sourceCode .sh_keyword{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_type{color:#0f0;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_string{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_regexp{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_specialchar{color:#f2f;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_comment{color:#00f;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_number{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_preproc{color:#f2f;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_function{color:#fff;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_url{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_date{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_time{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_file{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_ip{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_name{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_variable{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_oldfile{color:#f2f;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_newfile{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_difflines{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_selector{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_property{color:#B26818;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_value{color:#f00;font-weight:normal;font-style:normal;}

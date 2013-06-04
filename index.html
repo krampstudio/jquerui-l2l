@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link id="jq-theme" rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" />        
+        <link rel="stylesheet" type="text/css" href="l2l.min.css" />
+        <link rel="stylesheet" type="text/css" href="site.css" />
+        <link rel="stylesheet" type="text/css" href="lib/shjs/sh_style.css">
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+        
+        <script type="text/javascript" src="lib/shjs/sh_main.min.js"></script>
+        <script type="text/javascript" src="lib/shjs/lang/sh_javascript.min.js"></script>
+        
+        <script type="text/javascript" src="l2l.min.js"></script>
+        <script type="text/javascript" src="site.js"></script>
+
+    </head>
+    <body>
+        <a href="https://github.com/krampstudio/jquerui-l2l"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+        <header>
+            <h1>List 2 List plugin <small>for jQuery UI</small></h1>
+        </header>
+        <aside>
+            <h1>Features</h1>
+            <ul>
+                <li>Moves list items from left to right, right to left, into the list (the change items order) </li>
+                <li>Moving can be done using the controls (<span class="ui-icon ui-icon-triangle-1-e"></span>, <span class="ui-icon ui-icon-triangle-1-w"></span> and <span class="ui-icon ui-icon-trash"></span>) or by drag and drop (using the drag zone on <span class="ui-icon ui-icon-grip-dotted-vertical"></span>)</li>
+                <li>Multiple selecion, by holding <em>Ctrl</em> or by using the lasso (inside the containing list)</li>
+                <li>L2L interconnect : drop an item to another list</li>
+                <li>Theme fully integrated to jQuery UI</li>
+                <li>Customizable</li>
+            </ul>
+            <p>More to come soon : </p>
+            <ul>
+                <li>Items (re-)sorting on change</li>
+                <li>Hard reset</li>
+            </ul>
+        </aside>
+        <section>
+            Change theme: 
+            <select id="theme">
+                <option value="black-tie">Black Tie</option>
+                <option value="blitzer">Blitzer</option>
+                <option value="cupertino">Cupertino</option>
+                <option value="dark-hive">Dark Hive</option>
+                <option value="dot-luv">Dot Luv</option>
+                <option value="eggplant">Eggplant</option>
+                <option value="excite-bike">Excite Bike</option>
+                <option value="flick">Flick</option>
+                <option value="hot-sneaks">Hot Sneaks</option>
+                <option value="humanity">Humanity</option>
+                <option value="le-frog">Le Frog</option>
+                <option value="mint-choc">Mint Choc</option>
+                <option value="overcast">Overcast</option>
+                <option value="pepper-grinder">Pepper Grinder</option>
+                <option value="redmond">Redmond</option>
+                <option value="smoothness" selected="selected">Smoothness</option>
+                <option value="south-street">South Street</option>
+                <option value="start">Start</option>
+                <option value="sunny">Sunny</option>
+                <option value="swanky-purse">Swanky Purse</option>
+                <option value="trontastic">Tronstatic</option>
+                <option value="ui-darkness">UI Darkness</option>
+                <option value="ui-lightness">UI Lightness</option>
+                <option value="vader">Vader</option>
+            </select>
+            <article>
+                <h1>List 1 - <a href="#">show sources</a></h1>
+                <pre class="sh_javascript" contenteditable="true">
+    $('#l2l_1').l2l({
+        interconnect : true
+    });</pre>
+    
+                <div id="l2l_1">
+                    <ul>
+                        <li>item 1</li>
+                        <li>item 2</li>
+                        <li>item 3</li>
+                        <li>item 4</li>
+                    </ul>
+                    <ul>
+                        <li>item 5</li>
+                        <li>item 6</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h1>List 2 - <a href="#">show sources</a></h1>
+                <pre class="sh_javascript" contenteditable="true">
+    $('#l2l_1').l2l({
+         width : 200
+    });</pre>
+                <div id="l2l_2">
+                    <ul>
+                        <li>item 10</li>
+                        <li>item 11</li>
+                        <li>item 12</li>
+                        <li>item 13</li>
+                        <li>item 14</li>
+                    </ul>
+                    <ul></ul>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>
