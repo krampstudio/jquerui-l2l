@@ -58,13 +58,27 @@ module.exports = function(grunt){
                     jQuery : true
                 }
             }
+        },
+        
+        jquerymanifest: {
+            options: {
+                source: grunt.file.readJSON('package.json'),
+                overrides : {
+                    dependencies: {
+                        "jquery": ">=1.8",
+                        "jquery-ui" : ">=1.10"
+                    }
+                }
+            }
         }
 	});
+    
     grunt.loadNpmTasks('grunt-jsdoc');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jquerymanifest');
     
     grunt.registerTask('default', ['clean', 'jshint', 'jsdoc', 'uglify', 'cssmin'])
 };

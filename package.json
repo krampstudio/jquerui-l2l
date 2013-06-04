@@ -26,6 +26,7 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-clean": "~0.4.1",
-    "grunt-contrib-cssmin": "~0.6.1"
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-jquerymanifest": "git+https://github.com/krampstudio/grunt-jquerymanifest.git"
   }
 }
