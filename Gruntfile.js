@@ -1,27 +1,28 @@
 module.exports = function(grunt){
     'use strict';
     
-	grunt.initConfig({
-        
-        pkg : grunt.file.readJSON('package.json'),
-        
-        path : {
+    var packageJson = grunt.file.readJSON('package.json'),
+        paths = {
             build : 'build/',
             src : 'src/*.js',
             css : 'src/*.css' 
-        },
+        };
+    
+	grunt.initConfig({
+        
+        pkg : packageJson,
         
         banner :    '/* <%= pkg.name %> \n' + 
                     ' <%= pkg.author.name %> <%= pkg.author.email %> copyright <%= grunt.template.today("yyyy") %> \n' + 
                     ' @license <%= pkg.licenses[0].type %> <%= pkg.licenses[0].url %> \n*/\n',
         
-        clean : ['<%=path.build%>'],
+        clean : [ paths.build ],
         
         jsdoc : {
             dist: {
-                src : '<%=path.src%>',
+                src : paths.src,
                 options : {
-                    destination : '<%=path.build%>doc'
+                    destination : paths.build + 'doc'
                 }
             }
         },
@@ -31,14 +32,14 @@ module.exports = function(grunt){
                 banner : '<%=banner%>'
             },
             build : {
-                src : '<%=path.src%>',
+                src : paths.src,
                 dest : 'l2l.min.js'
             }
         },
         
         cssmin: {
             dist: {
-                src : '<%=path.css%>',
+                src :  paths.css,
                 dest : 'l2l.min.css',
                 options : {
                     banner : '<%=banner%>',
@@ -48,7 +49,7 @@ module.exports = function(grunt){
         },
         
         jshint : {
-            src : '<%=path.src%>',
+            src : paths.src,
             options : {
                 camelcase : true,
                 smarttabs : true,
@@ -62,7 +63,7 @@ module.exports = function(grunt){
         
         jquerymanifest: {
             options: {
-                source: grunt.file.readJSON('package.json'),
+                source: packageJson,
                 overrides : {
                     dependencies: {
                         "jquery": ">=1.8",
@@ -80,5 +81,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jquerymanifest');
     
-    grunt.registerTask('default', ['clean', 'jshint', 'jsdoc', 'uglify', 'cssmin'])
+    grunt.registerTask('default', ['clean', 'jshint', 'jsdoc', 'uglify', 'cssmin', 'jquerymanifest']);
 };
