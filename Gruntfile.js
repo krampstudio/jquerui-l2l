@@ -47,7 +47,16 @@ module.exports = function(grunt){
                 } 
             }
         },
-        
+
+        copy: {
+            dist : {
+                files : [
+                    {src : 'l2l.min.js' , dest : 'site/'},
+                    {src : 'l2l.min.css' , dest : 'site/'}
+                ]
+            }  
+        },
+
         jshint : {
             src : paths.src,
             options : {
@@ -80,6 +89,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jquerymanifest');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     
-    grunt.registerTask('default', ['clean', 'jshint', 'jsdoc', 'uglify', 'cssmin', 'jquerymanifest']);
+    grunt.registerTask('default', ['clean', 'jshint', 'jsdoc', 'uglify', 'cssmin', 'copy', 'jquerymanifest']);
 };

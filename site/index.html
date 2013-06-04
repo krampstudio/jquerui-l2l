@@ -3,57 +3,19 @@
     <head>
         <meta charset="utf-8">
 
-        <link id="jq-theme" rel="stylesheet" type="text/css" href="../lib/jquery.ui/dist/jquery-ui.min.css" />        
-        <link rel="stylesheet" type="text/css" href="../l2l.min.css" />
-        <link rel="stylesheet" type="text/css" href="./sample.css" />
+        <link id="jq-theme" rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" />        
+        <link rel="stylesheet" type="text/css" href="l2l.min.css" />
+        <link rel="stylesheet" type="text/css" href="site.css" />
         <link rel="stylesheet" type="text/css" href="lib/shjs/sh_style.css">
         
-        <script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="../lib/jquery.ui/dist/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
         
         <script type="text/javascript" src="lib/shjs/sh_main.min.js"></script>
         <script type="text/javascript" src="lib/shjs/lang/sh_javascript.min.js"></script>
         
-        <script type="text/javascript" src="../l2l.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-               
-                //set up code highlight 
-                sh_highlightDocument();
-                
-                $('section > article > h1 > a').click(function(event){
-                    event.preventDefault();
-                    $(this).parents('article').find('pre').toggle();
-                })
-                
-                //theme update
-                $('#theme').change(function(){
-                    $('#jq-theme').attr('href', 'http://code.jquery.com/ui/1.9.2/themes/' +  $(this).val() + '/jquery-ui.css');
-                });
-
-                //set up sample lists
-                $('#l2l_1').l2l({
-                    create: function(){
-                        console.log("l2l_1created");
-                    },
-                    change: function(event, ui){
-                        console.log(" l2l_1 changed");
-                        console.log(ui);
-                    },
-                    interconnect : true
-                });
-                 $('#l2l_2').l2l({
-                    create: function(){
-                        console.log("l2l_2 created");
-                    },
-                    change: function(event, ui){
-                        console.log("l2l_2 changed");
-                        console.log(ui);
-                    },
-                    width:200
-                });
-            });
-        </script>
+        <script type="text/javascript" src="l2l.min.js"></script>
+        <script type="text/javascript" src="site.js"></script>
 
     </head>
     <body>
@@ -80,7 +42,6 @@
         <section>
             Change theme: 
             <select id="theme">
-                <option value="base">Base</option>
                 <option value="black-tie">Black Tie</option>
                 <option value="blitzer">Blitzer</option>
                 <option value="cupertino">Cupertino</option>
@@ -96,7 +57,7 @@
                 <option value="overcast">Overcast</option>
                 <option value="pepper-grinder">Pepper Grinder</option>
                 <option value="redmond">Redmond</option>
-                <option value="smoothness">Smoothness</option>
+                <option value="smoothness" selected="selected">Smoothness</option>
                 <option value="south-street">South Street</option>
                 <option value="start">Start</option>
                 <option value="sunny">Sunny</option>
