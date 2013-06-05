@@ -1,14 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata);
 pre.sh_sourceCode{background-color:#2A2A2A;color:#f0f0f0;font-weight:normal;font-style:normal;font-family: 'Inconsolata', sans-serif;padding:.3em;border-radius:3px;}
-pre.sh_sourceCode .sh_keyword{color:#B26818;font-weight:normal;font-style:normal;}
-pre.sh_sourceCode .sh_type{color:#0f0;font-weight:normal;font-style:normal;}
-pre.sh_sourceCode .sh_string{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_keyword{color:#5579e6;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_type{color:#d4bb17;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_string{color:#8ead38;font-weight:normal;font-style:normal;}
 pre.sh_sourceCode .sh_regexp{color:#f00;font-weight:normal;font-style:normal;}
 pre.sh_sourceCode .sh_specialchar{color:#f2f;font-weight:normal;font-style:normal;}
-pre.sh_sourceCode .sh_comment{color:#00f;font-weight:normal;font-style:normal;}
-pre.sh_sourceCode .sh_number{color:#f00;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_comment{color:#8a8a8a;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_number{color:#bd5506;font-weight:normal;font-style:normal;}
 pre.sh_sourceCode .sh_preproc{color:#f2f;font-weight:normal;font-style:normal;}
-pre.sh_sourceCode .sh_function{color:#fff;font-weight:normal;font-style:normal;}
+pre.sh_sourceCode .sh_function{color:#f5f5f5;font-weight:normal;font-style:normal;}
 pre.sh_sourceCode .sh_url{color:#f00;font-weight:normal;font-style:normal;}
 pre.sh_sourceCode .sh_date{color:#B26818;font-weight:normal;font-style:normal;}
 pre.sh_sourceCode .sh_time{color:#B26818;font-weight:normal;font-style:normal;}

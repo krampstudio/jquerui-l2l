@@ -23,6 +23,7 @@ header h1 {
     margin:0;
     padding:0;
     font-family: 'Dosis', sans-serif;
+    text-shadow: 0 1px 2px #ccc;
 }
 aside {
     position: relative;
@@ -37,7 +38,39 @@ aside {
     background: -ms-linear-gradient(left, #BBBBBB, #E0E0E0);
     margin: 0;
     padding: 0 .5em;
-    border-bottom-right-radius: 9px;
+    border-bottom-right-radius: 6px;
+}
+
+aside h2{
+    position: relative;
+    font-size: 1.5em;
+    font-weight: bold;
+    right:0;
+    padding: 2px 20px 2px 5px;
+    margin: 5px -20px 5px 5px;
+    color: #fff;
+    background-color: #F07600;
+    background: -webkit-gradient(linear, left top, right top, from(#B24926), to(#F07600));
+    background: -webkit-linear-gradient(left, #B24926, #F07600);
+    background: -moz-linear-gradient(left, #F07600, #eb761d);
+    background: -ms-linear-gradient(left, #B24926, #F07600);
+    text-shadow: 0 1px 2px #ccc;
+    -webkit-box-shadow: 0 2px 4px #616161;
+    -moz-box-shadow: 0 2px 4px #616161;
+    box-shadow: 0 2px 4px #616161;
+    border-bottom-left-radius:3px;
+    border-top-left-radius:3px;
+}
+aside h2:after{
+    content: ' ';
+    position: absolute;
+	width: 0;
+	height: 0;
+	right: 0;
+	top: 100%;
+	border-width: 3px 7px;
+	border-style: solid;
+	border-color:  #666 transparent transparent  #666 ;
 }
 
 aside .ui-icon {
@@ -63,20 +96,28 @@ section {
     vertical-align: top;
     display: inline-block;
     width: 70% ;
-    padding: 0 1em;
+    padding:1em;
 }
 
-section h1 {
+article {
+    border-top: solid 1px #B24926;
+    margin:1em 0;
+}
+
+article > h2 {
     font-size:1.2em;
 }
-section h1 a{
+article > h2 > a{
     font-weight: normal;
+    color:#B24926;
 }
 
-#l2l_1, #l2l_2 {
-    border: solid 1px #333;
-    width:auto;
-}
+/*#l2l_1, #l2l_2 {
+    border: solid 1px #999;
+    display: inline-block;
+    padding:1em;
+    border-radius:3px;
+}*/
 
 article pre{
     display:none;

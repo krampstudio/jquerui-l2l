@@ -3,8 +3,14 @@ $(document).ready(function(){
     //set up code highlight 
     sh_highlightDocument();
     
-    $('section > article > h1 > a').click(function(event){
+    //sources toggle
+    $('section > article > h2 > a').click(function(event){
         event.preventDefault();
+        if($(this).text() === 'show sources'){
+            $(this).text('hide sources');
+        } else {
+            $(this).text('show sources');
+        }
         $(this).parents('article').find('pre').toggle();
     })
     
@@ -14,24 +20,14 @@ $(document).ready(function(){
     });
 
     //set up sample lists
-    $('#l2l_1').l2l({
-        create: function(){
-            console.log("l2l_1created");
-        },
-        change: function(event, ui){
-            console.log(" l2l_1 changed");
-            console.log(ui);
-        },
-        interconnect : true
-    });
-     $('#l2l_2').l2l({
-        create: function(){
-            console.log("l2l_2 created");
-        },
-        change: function(event, ui){
-            console.log("l2l_2 changed");
-            console.log(ui);
-        },
+    $('#l2l_1').l2l();
+    
+    $('#l2l_2').l2l({
+        interconnect : true,
         width:200
+    });
+    
+    $('#l2l_3').l2l({
+        autosort : true
     });
 });
