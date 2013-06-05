@@ -28,6 +28,11 @@ $(document).ready(function(){
     });
     
     $('#l2l_3').l2l({
-        autosort : true
+        sort : true,
+        sortAlg : function(current ,next){
+            var currentVal = $(current).text().toUpperCase();
+            var nextVal = $(next).text().toUpperCase();
+             return (currentVal < nextVal) ? 1 : (currentVal > nextVal) ? -1 : 0;
+        }
     });
 });

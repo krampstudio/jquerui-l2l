@@ -21,6 +21,8 @@
          * @property {Boolean} [interconnect=false] - in case of multiple l2l widgets, if we can drag elements into another widget
          */
         options: {
+            
+            //default options
             icons : {
                 l2r : "ui-icon-triangle-1-e",
                 r2l : "ui-icon-triangle-1-w",
@@ -31,7 +33,13 @@
             height: 'auto',
             clear : 'right',
             interconnect : false,
-            autosort : false
+            sort : false,
+            autosort : false,
+
+            //callbacks
+            create : null,
+            change : null,
+            sortAlg : null
         },
         
         /**
@@ -39,6 +47,8 @@
          * @private
          */
         _create: function() {
+            var self = this;
+    
             //check if the element is aleady created            
             if(!this.element.hasClass('l2l')){
                 
@@ -94,9 +104,16 @@
                         opacity: 0.7
                     });
 
-                if(this.options.autosort === true){
+                if(this.options.sort === true){
                     this._sort(this.llist);
                     this._sort(this.rlist);
+                    
+                    if(this.options.autosort === true){
+                        this.lists.on('sortupdate', function(){
+                            self._sort(self.llist);
+                            self._sort(self.rlist);    
+                        }); 
+                    }
                 }
                 
                 //attach the events handlers
@@ -160,7 +177,7 @@
          */
         _change: function(event){
             
-            if(this.options.autosort === true){
+            if(this.options.sort === true){
                 this._sort(this.llist);
                 this._sort(this.rlist);
             }
@@ -192,14 +209,34 @@
             };
         },
 
-        sort: function(current, next){
+        /**
+         * Current/Next Sort algorithm that can be overridden via the options
+         * @param {Objec} current - the current list ite
+         * @param {Objec} next - the next list item
+         * @returns {Number} 0 for equals, positive for greater than and negative for lesser than
+         */
+        sortAlg: function(current, next){
             var currentVal = $(current).text().toUpperCase();
             var nextVal = $(next).text().toUpperCase();
             return (currentVal < nextVal) ? -1 : (currentVal > nextVal) ? 1 : 0;
         },
 
+        /**
+         * Get the sort algorithm
+         * @private
+         * @returns {Function} the algo
+         */
+        _getSortAlg : function(){
+            return (this.options.sortAlg && typeof this.options.sortAlg === 'function') ? this.options.sortAlg : this.sortAlg;  
+        },
+
+        /**
+         * Sort the items of a list
+         * @private
+         * @param {Object} list - the list element to sort
+         */
         _sort : function(list){
-            list.children('li').sort(this.sort).appendTo(list);
+            list.children('li').sort(this._getSortAlg()).appendTo(list);
         },
         
         /**
