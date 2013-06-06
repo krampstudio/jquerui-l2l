@@ -187,7 +187,7 @@
              * @event ks.l2l#change
              * @type {Items}
              */
-            this._trigger("change", event, this._getItems());
+            this._trigger("change", event, this.getItems());
         },
         
         /**
@@ -195,7 +195,7 @@
          * @private
          * @returns {Items}
          */
-        _getItems : function(){
+        getItems : function(){
             
             /**
              * The lists items

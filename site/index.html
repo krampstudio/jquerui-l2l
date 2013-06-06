@@ -35,9 +35,22 @@
                 <li>Customizable</li>
                 <li>Auto sort of the items</li>
             </ul>
-            <p>More to come soon : </p>
+            <p>Coming soon: hard reset, move all, etc.</p>
+            <h2>Links</h2>
             <ul>
-                <li>Hard reset</li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">JSDoc</a></li>
+                <li><a href="https://github.com/krampstudio/jquerui-l2l/issues">Issues</a></li>
+                <li><a href="#">jQuery plugin repo</a></li>
+                <li><a href="#">Bower package</a></li>
+            </ul>
+            <h2>About</h2>
+            <ul>
+                <li>A <a href="http://krampstudio.com">krampstudio</a> creation</li>
+            </ul>
+            <h2>License</h2>
+            <ul>
+                <li><a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPL v3</a></li>
             </ul>
         </aside>
         <section>
@@ -116,10 +129,27 @@
     &lt;/ul&gt;
 &lt;/div&gt;</pre>
                 <pre class="sh_javascript" contenteditable="true">
-    $('#l2l_2').l2l({
-         width : 200,
-         interconnect : true
-    });</pre>
+$('#l2l_2').l2l({
+     width : 200,
+     interconnect : true
+});
+
+$('#show-right-l2').click(function(event){
+    event.preventDefault();
+    $('#l2-result').empty();
+     
+    //get the current data
+    var data = $('#l2l_2').l2l('getItems');
+    
+    //get the items from the right's' list
+    data.right.each(function(idx, elt){
+        $('#l2-result').append($(elt).text() + '<br />');
+    });
+     
+    return false;
+});
+        
+    </pre>
                 <div id="l2l_2">
                     <ul>
                         <li>item 10</li>
@@ -130,10 +160,17 @@
                     </ul>
                     <ul></ul>
                 </div>
+                <div class="result-container">
+                    <a id="show-right-l2" href="#">Show right items</a>
+                    <div id="l2-result">
+                        
+                    </div>
+                </div>
+                <div class="break"/>
             </article>
             <article>
                 <h2>Sample 3 - <a href="#">show sources</a></h2>
-                <p>Auto sortable</p>
+                <p>Sort and auto-sort with custom sort algo (reverse).</p>
                 <pre class="sh_html" contenteditable="true">
 &lt;div id="l2l_3"&gt;
     &lt;ul&gt;
@@ -150,9 +187,15 @@
     &lt;/ul&gt;
 &lt;/div&gt;</pre>
                 <pre class="sh_javascript" contenteditable="true">
-    $('#l2l_3').l2l({
-        autosort : true
-    });</pre>
+$('#l2l_3').l2l({
+    sort : true,
+    autosort: true,
+    sortAlg : function(current ,next){
+        var currentVal = $(current).text().toUpperCase();
+        var nextVal = $(next).text().toUpperCase();
+        return (currentVal < nextVal) ? 1 : (currentVal > nextVal) ? -1 : 0;
+    }
+});</pre>
                 <div id="l2l_3">
                     <ul>
                         <li>item 20</li>

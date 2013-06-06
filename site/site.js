@@ -12,6 +12,7 @@ $(document).ready(function(){
             $(this).text('show sources');
         }
         $(this).parents('article').find('pre').toggle();
+        return false;
     })
     
     //theme update
@@ -27,12 +28,22 @@ $(document).ready(function(){
         width:200
     });
     
+    $('#show-right-l2').click(function(event){
+         event.preventDefault();
+         $('#l2-result').empty();
+         $('#l2l_2').l2l('getItems').right.each(function(idx, elt){
+             $('#l2-result').append($(elt).text() + '<br />');
+         });
+         return false;
+    });
+    
     $('#l2l_3').l2l({
         sort : true,
+        autosort: true,
         sortAlg : function(current ,next){
             var currentVal = $(current).text().toUpperCase();
             var nextVal = $(next).text().toUpperCase();
-             return (currentVal < nextVal) ? 1 : (currentVal > nextVal) ? -1 : 0;
+            return (currentVal < nextVal) ? 1 : (currentVal > nextVal) ? -1 : 0;
         }
     });
 });

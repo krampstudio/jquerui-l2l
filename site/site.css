@@ -9,8 +9,7 @@ html, body {
 }
 header {
     display: block;
-    min-height:40px;
-    height: 10%;
+    min-height:60px;
     margin: 0;
     padding: 0;
     background-color: #333;
@@ -29,25 +28,24 @@ aside {
     position: relative;
     display: inline-block;
     vertical-align: top;
-    width: 20% ;
-    height: 90% ;
+    width: 22% ;
     background-color: #e0e0e0;
-    background: -webkit-gradient(linear, left top, right top, from(#BBBBBB), to(#E0E0E0));
-    background: -webkit-linear-gradient(left, #BBBBBB, #E0E0E0);
-    background: -moz-linear-gradient(left, #BBBBBB, #E0E0E0);
-    background: -ms-linear-gradient(left, #BBBBBB, #E0E0E0);
+    background: -webkit-gradient(linear, left top, right top, from(#BFBFBF), to(#E0E0E0));
+    background: -webkit-linear-gradient(left, #BFBFBF, #E0E0E0);
+    background: -moz-linear-gradient(left, #BFBFBF, #E0E0E0);
+    background: -ms-linear-gradient(left, #BFBFBF, #E0E0E0);
     margin: 0;
-    padding: 0 .5em;
+    padding: 0 .5em 1em 0;
     border-bottom-right-radius: 6px;
 }
 
 aside h2{
     position: relative;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     right:0;
-    padding: 2px 20px 2px 5px;
-    margin: 5px -20px 5px 5px;
+    padding: 2px 16px 2px 5px;
+    margin: 5px -16px 5px 5px;
     color: #fff;
     background-color: #F07600;
     background: -webkit-gradient(linear, left top, right top, from(#B24926), to(#F07600));
@@ -68,7 +66,7 @@ aside h2:after{
 	height: 0;
 	right: 0;
 	top: 100%;
-	border-width: 3px 7px;
+	border-width: 3px 5px;
 	border-style: solid;
 	border-color:  #666 transparent transparent  #666 ;
 }
@@ -92,6 +90,26 @@ aside ul li {
     border-bottom:solid 1px #999;
 }
 
+aside ul li:last-child{
+    border-bottom-width:0;
+}
+
+aside a {
+    color:#B24926;
+    text-decoration:none;
+}
+
+aside a:hover {
+    color:#F07600;
+}
+aside a:hover {
+    color:#F07600;
+}
+aside p {
+    margin-left:.2em;
+}
+
+
 section {
     vertical-align: top;
     display: inline-block;
@@ -112,12 +130,10 @@ article > h2 > a{
     color:#B24926;
 }
 
-/*#l2l_1, #l2l_2 {
-    border: solid 1px #999;
-    display: inline-block;
-    padding:1em;
-    border-radius:3px;
-}*/
+.result-container {
+    border: solid 1px #eee;
+    width: 250px;
+}
 
 article pre{
     display:none;
