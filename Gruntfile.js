@@ -16,7 +16,7 @@ module.exports = function(grunt){
                     ' <%= pkg.author.name %> <%= pkg.author.email %> copyright <%= grunt.template.today("yyyy") %> \n' + 
                     ' @license <%= pkg.licenses[0].type %> <%= pkg.licenses[0].url %> \n*/\n',
         
-        clean : [ paths.build ],
+        clean : [ paths.build, 'site/doc' ],
         
         jsdoc : {
             dist: {
@@ -52,7 +52,8 @@ module.exports = function(grunt){
             dist : {
                 files : [
                     {src : 'l2l.min.js' , dest : 'site/'},
-                    {src : 'l2l.min.css' , dest : 'site/'}
+                    {src : 'l2l.min.css' , dest : 'site/'},
+                    {src : ['**'], cwd : paths.build + 'doc/', dest : 'site/doc', expand : true}
                 ]
             }  
         },
