@@ -13,6 +13,7 @@
         
         <script type="text/javascript" src="lib/shjs/sh_main.min.js"></script>
         <script type="text/javascript" src="lib/shjs/lang/sh_javascript.min.js"></script>
+        <script type="text/javascript" src="lib/shjs/lang/sh_html.min.js"></script>
         
         <script type="text/javascript" src="l2l.min.js"></script>
         <script type="text/javascript" src="site.js"></script>
@@ -21,10 +22,10 @@
     <body>
         <a href="https://github.com/krampstudio/jquerui-l2l"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
         <header>
-            <h1>List 2 List plugin <small>for jQuery UI</small></h1>
+            <h1>List to List<small> plugin samples for jQuery UI</small>  </h1>
         </header>
         <aside>
-            <h1>Features</h1>
+            <h2>Features</h2>
             <ul>
                 <li>Moves list items from left to right, right to left, into the list (the change items order) </li>
                 <li>Moving can be done using the controls (<span class="ui-icon ui-icon-triangle-1-e"></span>, <span class="ui-icon ui-icon-triangle-1-w"></span> and <span class="ui-icon ui-icon-trash"></span>) or by drag and drop (using the drag zone on <span class="ui-icon ui-icon-grip-dotted-vertical"></span>)</li>
@@ -32,48 +33,72 @@
                 <li>L2L interconnect : drop an item to another list</li>
                 <li>Theme fully integrated to jQuery UI</li>
                 <li>Customizable</li>
+                <li>Auto sort of the items</li>
             </ul>
-            <p>More to come soon : </p>
+            <p>Coming soon: hard reset, move all, etc.</p>
+            <h2>Links</h2>
             <ul>
-                <li>Items (re-)sorting on change</li>
-                <li>Hard reset</li>
+                <li><a href="https://github.com/krampstudio/jquerui-l2l"><img src="img/github.png" />Sources, doc &amp; issues</a></li>
+                <li><a href="doc/index.html"><img src="img/question-sign.png" />JSDoc</a></li>
+                <li><a href="#"><img src="img/jquery.png" />jQuery plugin repo</a></li>
+                <li><a href="#"><img src="img/bower.png" />Bower package</a></li>
+            </ul>
+            <h2>About</h2>
+            <ul>
+                <li>A <a href="http://krampstudio.com">krampstudio</a> creation</li>
+            </ul>
+            <h2>License</h2>
+            <ul>
+                <li><a href="http://www.gnu.org/licenses/gpl-3.0.txt">GPL v3</a></li>
             </ul>
         </aside>
         <section>
-            Change theme: 
-            <select id="theme">
-                <option value="black-tie">Black Tie</option>
-                <option value="blitzer">Blitzer</option>
-                <option value="cupertino">Cupertino</option>
-                <option value="dark-hive">Dark Hive</option>
-                <option value="dot-luv">Dot Luv</option>
-                <option value="eggplant">Eggplant</option>
-                <option value="excite-bike">Excite Bike</option>
-                <option value="flick">Flick</option>
-                <option value="hot-sneaks">Hot Sneaks</option>
-                <option value="humanity">Humanity</option>
-                <option value="le-frog">Le Frog</option>
-                <option value="mint-choc">Mint Choc</option>
-                <option value="overcast">Overcast</option>
-                <option value="pepper-grinder">Pepper Grinder</option>
-                <option value="redmond">Redmond</option>
-                <option value="smoothness" selected="selected">Smoothness</option>
-                <option value="south-street">South Street</option>
-                <option value="start">Start</option>
-                <option value="sunny">Sunny</option>
-                <option value="swanky-purse">Swanky Purse</option>
-                <option value="trontastic">Tronstatic</option>
-                <option value="ui-darkness">UI Darkness</option>
-                <option value="ui-lightness">UI Lightness</option>
-                <option value="vader">Vader</option>
-            </select>
+            <div id="theme-selector">
+                Change theme: 
+                <select id="theme">
+                    <option value="black-tie">Black Tie</option>
+                    <option value="blitzer">Blitzer</option>
+                    <option value="cupertino">Cupertino</option>
+                    <option value="dark-hive">Dark Hive</option>
+                    <option value="dot-luv">Dot Luv</option>
+                    <option value="eggplant">Eggplant</option>
+                    <option value="excite-bike">Excite Bike</option>
+                    <option value="flick">Flick</option>
+                    <option value="hot-sneaks">Hot Sneaks</option>
+                    <option value="humanity">Humanity</option>
+                    <option value="le-frog">Le Frog</option>
+                    <option value="mint-choc">Mint Choc</option>
+                    <option value="overcast">Overcast</option>
+                    <option value="pepper-grinder">Pepper Grinder</option>
+                    <option value="redmond">Redmond</option>
+                    <option value="smoothness" selected="selected">Smoothness</option>
+                    <option value="south-street">South Street</option>
+                    <option value="start">Start</option>
+                    <option value="sunny">Sunny</option>
+                    <option value="swanky-purse">Swanky Purse</option>
+                    <option value="trontastic">Tronstatic</option>
+                    <option value="ui-darkness">UI Darkness</option>
+                    <option value="ui-lightness">UI Lightness</option>
+                    <option value="vader">Vader</option>
+                </select>
+            </div>
             <article>
-                <h1>List 1 - <a href="#">show sources</a></h1>
-                <pre class="sh_javascript" contenteditable="true">
-    $('#l2l_1').l2l({
-        interconnect : true
-    });</pre>
-    
+                <h2>Sample 1 - <a href="#">show sources</a></h2>
+                <p>Default options</p>
+                <pre class="sh_html" contenteditable="true">
+&lt;div id="l2l_1"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;item 1&lt;/li&gt;
+        &lt;li&gt;item 2&lt;/li&gt;
+        &lt;li&gt;item 3&lt;/li&gt;
+        &lt;li&gt;item 4&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+        &lt;li&gt;item 5&lt;/li&gt;
+        &lt;li&gt;item 6&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre>
+                <pre class="sh_javascript" contenteditable="true">$('#l2l_1').l2l();</pre>
                 <div id="l2l_1">
                     <ul>
                         <li>item 1</li>
@@ -88,11 +113,42 @@
                 </div>
             </article>
             <article>
-                <h1>List 2 - <a href="#">show sources</a></h1>
+                <h2>Sample 2 - <a href="#">show sources</a></h2>
+                <p>Fix width, and interconnect with others</p>
+                <pre class="sh_html" contenteditable="true">
+&lt;div id="l2l_2"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;item 10&lt;/li&gt;
+        &lt;li&gt;item 11&lt;/li&gt;
+        &lt;li&gt;item 12&lt;/li&gt;
+        &lt;li&gt;item 13&lt;/li&gt;
+        &lt;li&gt;item 14&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre>
                 <pre class="sh_javascript" contenteditable="true">
-    $('#l2l_1').l2l({
-         width : 200
-    });</pre>
+$('#l2l_2').l2l({
+     width : 200,
+     interconnect : true
+});
+
+$('#show-right-l2').click(function(event){
+    event.preventDefault();
+    $('#l2-result').empty();
+     
+    //get the current data
+    var data = $('#l2l_2').l2l('getItems');
+    
+    //get the items from the right's' list
+    data.right.each(function(idx, elt){
+        $('#l2-result').append($(elt).text() + '<br />');
+    });
+     
+    return false;
+});
+        
+    </pre>
                 <div id="l2l_2">
                     <ul>
                         <li>item 10</li>
@@ -102,6 +158,57 @@
                         <li>item 14</li>
                     </ul>
                     <ul></ul>
+                </div>
+                <div class="result-container">
+                    <a id="show-right-l2" href="#">Show right items</a>
+                    <div id="l2-result">
+                        
+                    </div>
+                </div>
+                <div class="break"/>
+            </article>
+            <article>
+                <h2>Sample 3 - <a href="#">show sources</a></h2>
+                <p>Sort and auto-sort with custom sort algo (reverse).</p>
+                <pre class="sh_html" contenteditable="true">
+&lt;div id="l2l_3"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;item 20&lt;/li&gt;
+        &lt;li&gt;Item 24&lt;/li&gt;
+        &lt;li&gt;item 22&lt;/li&gt;
+        &lt;li&gt;item 21&lt;/li&gt;
+        &lt;li&gt;item 23&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+        &lt;li&gt;item 29&lt;/li&gt;
+        &lt;li&gt;Item 26&lt;/li&gt;
+        &lt;li&gt;item 27&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre>
+                <pre class="sh_javascript" contenteditable="true">
+$('#l2l_3').l2l({
+    sort : true,
+    autosort: true,
+    sortAlg : function(current ,next){
+        var currentVal = $(current).text().toUpperCase();
+        var nextVal = $(next).text().toUpperCase();
+        return (currentVal < nextVal) ? 1 : (currentVal > nextVal) ? -1 : 0;
+    }
+});</pre>
+                <div id="l2l_3">
+                    <ul>
+                        <li>item 20</li>
+                        <li>Item 24</li>
+                        <li>item 22</li>
+                        <li>item 21</li>
+                        <li>Item 25</li>
+                        <li>item 23</li>
+                    </ul>
+                    <ul>
+                        <li>item 29</li>
+                        <li>Item 26</li>
+                        <li>item 27</li>
+                    </ul>
                 </div>
             </article>
         </section>
