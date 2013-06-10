@@ -3,9 +3,11 @@
   "version": "0.1.1",
   "title": "jqueryui-l2l",
   "author": {
-     "name": "Bertrand Chevrier",
-     "email": "chevrier.bertrand@gmail.com",
-     "url": "https://github.com/krampstudio"
+    "name": {
+      "name": "Bertrand Chevrier",
+      "email": "chevrier.bertrand@gmail.com",
+      "url": "https://github.com/krampstudio"
+    }
   },
   "licenses": [
     {
