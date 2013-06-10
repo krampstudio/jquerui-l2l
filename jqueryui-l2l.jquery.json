@@ -1,13 +1,11 @@
 {
   "name": "jqueryui-l2l",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "jqueryui-l2l",
   "author": {
-    "name": {
-      "name": "Bertrand Chevrier",
-      "email": "chevrier.bertrand@gmail.com",
-      "url": "https://github.com/krampstudio"
-    }
+     "name": "Bertrand Chevrier",
+     "email": "chevrier.bertrand@gmail.com",
+     "url": "https://github.com/krampstudio"
   },
   "licenses": [
     {
@@ -21,8 +19,8 @@
   "description": "A JQuery UI List to List widget",
   "keywords": [
     "list",
-    "list to list",
-    "drag drop",
+    "list-to-list",
+    "l2l",
     "jquery-ui",
     "jqueryui",
     "widget"

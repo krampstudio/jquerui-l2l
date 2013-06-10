@@ -1,7 +1,7 @@
 {
   "name": "jqueryui-l2l",
   "description": "A JQuery UI List to List widget",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://krampstudio.com/jquerui-l2l/",
   "author": {
     "name": "Bertrand Chevrier",
@@ -33,5 +33,5 @@
     "grunt-jquerymanifest": "latest",
     "grunt-contrib-copy": "latest"
   },
-  "keywords" : ["list", "list to list", "drag drop", "jquery-ui", "jqueryui", "widget"]
+  "keywords" : ["list", "list-to-list", "l2l", "jquery-ui", "jqueryui", "widget"]
 }

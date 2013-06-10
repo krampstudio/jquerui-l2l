@@ -1,6 +1,6 @@
 {
   "name": "jqueryui-l2l",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main" : [
     "l2l.min.js",
     "l2l.min.css"
