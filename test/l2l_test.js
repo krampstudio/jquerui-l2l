@@ -30,7 +30,7 @@
             expect(4); 
             $('#list1').l2l({
                 create: function(){
-                    var widgetInstance = $('#list1').data('ksL2l'); 
+                    var widgetInstance = $('#list1').data('ks-l2l'); 
                     equal(typeof widgetInstance, 'object', 'The widget instance is avaialble');
                     equal(widgetInstance.element.attr('id'), 'list1', 'The widget instance target element is the tested element');
 
@@ -54,17 +54,79 @@
             });
         });
 
-        asyncTest("Check select elements", function(){
+        /*asyncTest("Check select elements", function(){
             expect(2);
             $('#list1').l2l({
                 create: function(){
                     var item1 = $('#list1').find('li').first();
                    
-                     equal(item1.text(), 'Item 1', 'Check the content of the first item');
+                    equal(item1.text(), 'Item 1', 'Check the content of the first item');
                     
-                    item1.trigger('click');
+                    item1.trigger('mousedown mouseup click');
                     
                     ok(item1.hasClass('ui-selected'), "Check the item has the 'ui-selected' class once clicked");
+                    start();
+                }
+            });
+        });*/
+        
+        asyncTest("Check move one item left to right element", function(){
+            expect(4);
+            $('#list1').l2l({
+                create: function(){
+                    
+                    equal($('#list1').find('.l2l-list:eq(0) li').length, 3, "The left list should contains 3 items");
+                    equal($('#list1').find('.l2l-list:eq(1) li').length, 0, "The right list should not contains any item");
+                    
+                   $('#list1').find('li').first().addClass('ui-selected');
+                    $('#list1').find('#l2r').click();
+                    
+                    equal($('#list1').find('.l2l-list:eq(0) li').length, 2, "The left list should contains only 2 items");
+                    equal($('#list1').find('.l2l-list:eq(1) li').length, 1, "The right list should contains now 1 item");
+                  
+                    start();
+                }
+            });
+        });
+            
+        asyncTest("Check moving multiple items left to right element", function(){
+            expect(4);
+            $('#list1').l2l({
+                create: function(){
+                    
+                    equal($('#list1').find('.l2l-list:eq(0) li').length, 3, "The left list should contains 3 items");
+                    equal($('#list1').find('.l2l-list:eq(1) li').length, 0, "The right list should not contains any item");
+                    
+                    $('#list1').find('li').addClass('ui-selected');
+                    $('#list1').find('#l2r').click();
+                    
+                    equal($('#list1').find('.l2l-list:eq(0) li').length, 0, "The left list should not contains items anymore");
+                    equal($('#list1').find('.l2l-list:eq(1) li').length, 3, "The right list should now contains all items");
+                  
+                    start();
+                }
+            });
+        });
+        
+        asyncTest("Check moving items left to right and rigt to left element", function(){
+            expect(6);
+            $('#list1').l2l({
+                create: function(){
+                    
+                    equal($('#list1').find('.l2l-list:eq(0) li').length, 3, "The left list should contains 3 items");
+                    equal($('#list1').find('.l2l-list:eq(1) li').length, 0, "The right list should not contains any item");
+                    
+                    $('#list1').find('li').addClass('ui-selected');
+                    $('#list1').find('#l2r').click();
+                    
+                    equal($('#list1').find('.l2l-list:eq(0) li').length, 0, "The left list should not contains items anymore");
+                    equal($('#list1').find('.l2l-list:eq(1) li').length, 3, "The right list should now contains all items");
+                    
+                    $('#list1').find('#r2l').click();
+                    
+                    equal($('#list1').find('.l2l-list:eq(0) li').length, 3, "The left list should now contains all items");
+                    equal($('#list1').find('.l2l-list:eq(1) li').length, 0, "The left list should not contains items anymore");
+                    
                     start();
                 }
             });

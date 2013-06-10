@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     //set up sample lists
     $('#l2l_1').l2l();
-    
+        
     $('#l2l_2').l2l({
         interconnect : true,
         width:200
