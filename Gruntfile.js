@@ -79,6 +79,8 @@ module.exports = function(grunt){
             options: {
                 source: packageJson,
                 overrides : {
+                    docs : "https://github.com/krampstudio/jquerui-l2l",
+                    download : "https://github.com/krampstudio/jquerui-l2l",
                     dependencies: {
                         "jquery": ">=1.8",
                         "jquery-ui" : ">=1.10"

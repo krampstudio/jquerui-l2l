@@ -19,5 +19,15 @@
     "jquery-ui": ">=1.10"
   },
   "description": "A JQuery UI List to List widget",
-  "homepage": "http://krampstudio.com/jquerui-l2l/"
+  "keywords": [
+    "list",
+    "list to list",
+    "drag drop",
+    "jquery-ui",
+    "jqueryui",
+    "widget"
+  ],
+  "homepage": "http://krampstudio.com/jquerui-l2l/",
+  "docs": "https://github.com/krampstudio/jquerui-l2l",
+  "download": "https://github.com/krampstudio/jquerui-l2l"
 }

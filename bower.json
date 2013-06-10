@@ -1,6 +1,13 @@
 {
   "name": "jqueryui-l2l",
   "version": "0.1.0",
+  "main" : [
+    "l2l.min.js",
+    "l2l.min.css"
+  ],
+  "ignore" : [
+    "site"
+  ],
   "dependencies": {
     "jquery": "~2.0.0",
     "jquery.ui": "~1.10.3"

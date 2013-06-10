@@ -18,6 +18,9 @@
     "type": "git",
     "url": "git://github.com/krampstudio/jqueryui-l2l"
   },
+  "scripts" : {
+    "test" : "grunt qunit"
+  },
   "devDependencies": {
     "grunt": "0.4.x",
     "grunt-jsdoc": "latest",
@@ -29,5 +32,6 @@
     "grunt-contrib-cssmin": "latest",
     "grunt-jquerymanifest": "latest",
     "grunt-contrib-copy": "latest"
-  }
+  },
+  "keywords" : ["list", "list to list", "drag drop", "jquery-ui", "jqueryui", "widget"]
 }
