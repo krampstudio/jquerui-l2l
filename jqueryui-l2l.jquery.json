@@ -3,15 +3,14 @@
   "version": "0.1.1",
   "title": "jqueryui-l2l",
   "author": {
-    "name": {
-      "name": "Bertrand Chevrier",
-      "email": "chevrier.bertrand@gmail.com",
-      "url": "https://github.com/krampstudio"
-    }
+     "name": "Bertrand Chevrier",
+     "email": "chevrier.bertrand@gmail.com",
+     "url": "https://github.com/krampstudio"
   },
   "licenses": [
     {
-      "url": "http://opensource.org/licenses/undefined"
+      "type": "GPL",
+      "url": "http://www.gnu.org/licenses/gpl-3.0.txt"
     }
   ],
   "dependencies": {

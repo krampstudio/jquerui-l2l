@@ -99,5 +99,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-copy');
     
-    grunt.registerTask('default', ['clean', 'jshint', 'qunit', 'jsdoc', 'uglify', 'cssmin', 'copy', 'jquerymanifest']);
+    grunt.registerTask('default', ['clean', 'jshint', 'qunit', 'jsdoc', 'uglify', 'cssmin', 'copy']);
 };
