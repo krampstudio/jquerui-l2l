@@ -3,6 +3,13 @@ $(document).ready(function(){
     //set up code highlight 
     sh_highlightDocument();
     
+    //bower link 
+    $('#bower').click(function(event){
+        event.preventDefault();
+        $(this).next().toggle();
+        return false;
+    });
+
     //sources toggle
     $('section > article > h2 > a').click(function(event){
         event.preventDefault();
@@ -13,7 +20,7 @@ $(document).ready(function(){
         }
         $(this).parents('article').find('pre').toggle();
         return false;
-    })
+    });
     
     //theme update
     $('#theme').change(function(){
