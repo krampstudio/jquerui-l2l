@@ -1,5 +1,4 @@
-
-> Under construction, plugin not yet released
+> Under construction
 
 # jQuery UI List to List Widget
 
