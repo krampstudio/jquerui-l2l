@@ -12,9 +12,27 @@ A jQuery UI plugin to used move items between two lists.
  - jquery >= 1.8 (only tested with 2.0.0)
  - jquery-ui >= 1.10 
 
-### Install 
+### Getting started 
 
-#### Bower
+Download the latest [tag](https://github.com/krampstudio/jquerui-l2l/tags) or get it via [Bower](http://bower.io) :
+
+```bash
+bower install --save jquery-l2l
+```
+
+Then add the stylesheet and the script files to your header (in addition to the dependencies) 
+
+```html
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css" />  
+        <link rel="stylesheet" type="text/css" href="l2l.min.css" />
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+        
+        <script type="text/javascript" src="l2l.min.js"></script>
+```
+
+Note that a jQuery UI theme must be loaded, as the plugin integrates with a theme (it can be a custom theme).
 
 #### Manual 
 
