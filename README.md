@@ -4,14 +4,18 @@
 
 A jQuery UI plugin to used move items between two lists.
 
+## Demo and samples
+
+[krampstudio.com/jquerui-l2l](http://krampstudio.com/jquerui-l2l/)
+
 ## Features
 
 - Moves list items from left to right, right to left, into the list (the change items order)
 - Moving can be done using the controls (, and ) or by drag and drop (using the drag zone on )
-- Multiple selecion, by holding Ctrl or by using the lasso (inside the containing list)
-- L2L interconnect : drop an item to another list
+- Multiple selection, by holding _Ctrl_ or by using the lasso (inside the containing list)
+- L2L interconnect : drop an item to another widget's list
 - Theme fully integrated to jQuery UI
-- Customizable
+- Customizable 
 - Auto sort of the items
 
 ## Getting started 
@@ -60,6 +64,39 @@ $('.my-lists').l2l();
 ```
 
 ## Documentation
+
+#### Options
+
+`$.fn.l2l(options)`
+
+ - `icons` _Object_ the list of icons used (refers to jquery-ui icon classes)
+ - `width` _String | Number_ the lists width as auto, a css string or in pixel (default = 'auto')
+ - `height` _String | Number_ the lists height as auto, a css string or in pixel (default = 'auto')
+ - `clear` _String | Boolean_ the clear/trash button strategy in 'right', 'left', 'all' or false by example, left removes selected items from the left list, etc. (default = 'right')
+ - `interconnect` _Boolean_ 	in case of multiple l2ls widgets, if we can drag elements into another widget (default=false)
+ - `sort` _Boolean_ (default = false)
+ - `autosort` _Boolean_ (default = false)
+ - `sortAlg(current, next) → {Number}` _Function_
+
+ 
+```javascript
+$('selector').l2l({
+   height : '25em',
+   width : 200,
+   sort : true,
+   autosort: true
+});
+```
+
+#### Events
+
+ - `create` 
+ - `change`
+
+### Methods
+
+ - `getItems() → {Object}`
+
 
 ## Todo
 
