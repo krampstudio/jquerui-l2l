@@ -82,6 +82,8 @@ $('.my-lists').l2l();
  - `autosort` _Boolean_ : sort also when dropped (default = false)
  - `sortAlg(current, next) → {Number}` _Function_ : the sort algorithm function, the curent and next items elements in parameters and returns a _negative, zero or positive_ number.  
 
+##### Sample
+
 ```javascript
 $('selector').l2l({
    height : '25em',
@@ -93,8 +95,22 @@ $('selector').l2l({
 
 #### Events
 
- - `create` 
- - `change`
+ - `create(event)` _Function_ : triggered after the widget has been created
+ - `change(event, items)` _Function_ : triggered after any change in the items of the both lists
+ 
+##### Sample
+
+```javascript
+$('selector').l2l({
+  create: function(){
+     console.log('widget created');  
+   },
+   change: function(event, items){
+       console.log(items.left);
+       console.log(items.right);
+   }
+});
+``` 
 
 ### Methods
 
