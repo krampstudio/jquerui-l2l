@@ -1,18 +1,16 @@
-> Under construction
-
 # jQuery UI List to List Widget
 
 A jQuery UI plugin to used move items between two lists.
 
-## Demo and samples
-
-[krampstudio.com/jquerui-l2l](http://krampstudio.com/jquerui-l2l/)
+ - [Demo and samples](http://krampstudio.com/jquerui-l2l/)
+ - [JsDoc](http://krampstudio.com/jquerui-l2l/doc/ks.l2l.html)
+ - [jQuery plugin repo](http://plugins.jquery.com/jqueryui-l2l/)
 
 ## Features
 
-- Moves list items from left to right, right to left, into the list (the change items order)
-- Moving can be done using the controls (, and ) or by drag and drop (using the drag zone on )
-- Multiple selection, by holding _Ctrl_ or by using the lasso (inside the containing list)
+- Moves list items from left to right, right to left, into the list (change items order)
+- Moving can be done using the controls or by drag and drop
+- Multiple selection, by holding _Ctrl_ or by using the lasso
 - L2L interconnect : drop an item to another widget's list
 - Theme fully integrated to jQuery UI
 - Customizable 
@@ -27,7 +25,7 @@ A jQuery UI plugin to used move items between two lists.
 
 ## Install
 
-Download the latest [tag](https://github.com/krampstudio/jquerui-l2l/tags) or get it via [Bower](http://bower.io) :
+Download the latest [tag](https://github.com/krampstudio/jquerui-l2l/tags) or get it via [bower] :
 
 ```bash
 bower install --save jquery-l2l
@@ -46,7 +44,7 @@ Then add the stylesheet and the script files to your HTML file (in addition to t
 
 Note that a jQuery UI theme must be loaded, as the plugin integrates with a theme (it can be a custom theme).
 
-The plugin must target a block element that contains exactly 2 lists:
+The plugin must target a block element that contains exactly two `ul` elements :
 
 ```html
 <div class="my-lists">
@@ -114,13 +112,50 @@ $('selector').l2l({
 
 ### Methods
 
- - `getItems() → {Object}`
+ - `getItems() → {Object}`  _Function_ : returns the items of the both lists, each item is the  
 
 
 ## Todo
 
-Coming soon: hard reset, move all, etc.
+ - hard reset : save the items state before plugin load to be able to restore it
+ - move all : move all items from r2l or l2r
+ - implements the `destroy` and `disable` method
+ - See [issues](https://github.com/krampstudio/jquerui-l2l/issues)
 
 ## Development
 
+### Set up
+
+As well, [node] and [npm] must be installed and running on your system.
+
+ 1. Clone/Fork the repo
+ 2. Install [bower] and [grunt], if you don't have them already : `$> npm install -g grunt-cli bower`
+ 3. Go to the project folder : `$> cd jqueryui-l2l`  
+ 4. Install the development dependencies : `$> npm isntall`
+ 5. Install the client librairies : `$> bower isntall`
+ 6. The jquery.ui dependency needs also to be build: `$> cd lib/jquery.ui; npm install; grunt build`
+
+### Technical documentation
+
+The plugin uses the widget factory provided by jQUery UI. Please refer to the [offical documentation](http://api.jqueryui.com/jQuery.widget/) to learn the way it works.
+
+### Tests
+
+Any evolution must be tested using the [qunit] test. Add a new test case to `test/l2l_test.js`.
+
+The test suite must runs succesfuly. Try it using: `$> grunt qunit`
+
+### Build
+
+Run the build sequence : `$> grunt`
+
 ## History
+
+ * _0.1.1_ First release
+   * _0.1.2_ Updated meta-data
+
+
+[node]: http://nodejs.org
+[npm]: http://npmjs.org
+[grunt]: http://gruntjs.com
+[bower]: http://bower.io
